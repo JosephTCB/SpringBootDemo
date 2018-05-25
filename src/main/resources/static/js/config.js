@@ -1,4 +1,4 @@
-var appId = "wxe67eb7e0742bf2b7";
+var appId = "*****";//替换成微信公众号的appid
 
 // 获取绝对路径
 function getContextPath() {
