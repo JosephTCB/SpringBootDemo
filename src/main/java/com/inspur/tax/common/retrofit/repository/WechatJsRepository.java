@@ -30,27 +30,21 @@ public class WechatJsRepository {
     WechatJsService wechatJsService = retrofit.create(WechatJsService.class);
 
     public String getToken() throws IOException {
-        while (true) {
-            Call<TokenResponse> call = wechatJsService.getToken(grant_type, appid, secret);
-            TokenResponse tokenResponse = call.execute().body();
-            if (tokenResponse.errcode == 0) {
-                token = tokenResponse.access_token;
-                tokentimestamp = createTimestamp();
-                break;
-            }
+        Call<TokenResponse> call = wechatJsService.getToken(grant_type, appid, secret);
+        TokenResponse tokenResponse = call.execute().body();
+        if (tokenResponse.errcode == 0) {
+            token = tokenResponse.access_token;
+            tokentimestamp = createTimestamp();
         }
         return token;
     }
 
     public String getTicket() throws IOException {
-        while (true) {
-            Call<TicketResponse> call = wechatJsService.getTicket(token, "jsapi");
-            TicketResponse ticketResponse = call.execute().body();
-            if (ticketResponse.errcode == 0) {
-                ticket = ticketResponse.ticket;
-                tickettimestamp = createTimestamp();
-                break;
-            }
+        Call<TicketResponse> call = wechatJsService.getTicket(token, "jsapi");
+        TicketResponse ticketResponse = call.execute().body();
+        if (ticketResponse.errcode == 0) {
+            ticket = ticketResponse.ticket;
+            tickettimestamp = createTimestamp();
         }
         return ticket;
     }
