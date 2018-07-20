@@ -3,6 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <mappers>
-        <mapper resource="com/inspur/tax/roboat/dao/mydao.xml"/>
+        <mapper resource="com/leslie/demo/wechat/dao/mydao.xml"/>
     </mappers>
 </configuration>
