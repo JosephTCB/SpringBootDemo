@@ -17,13 +17,13 @@ import java.io.IOException;
 public class WechatJsController {
     private WechatJsRepository wechatJsRepository;
 
-    @RequestMapping("getToken")
+    @RequestMapping("/getToken")
     public String getToken() throws IOException {
         String token = wechatJsRepository.getTokenInstance();
         return token;
     }
 
-    @RequestMapping("getTicket")
+    @RequestMapping("/getTicket")
     public String getTicket() throws IOException {
         String ticket = wechatJsRepository.getTicketInstance();
         return ticket;
@@ -34,7 +34,7 @@ public class WechatJsController {
         this.wechatJsRepository = wechatJsRepository;
     }
 
-    @RequestMapping("getSignature")
+    @RequestMapping("/getSignature")
     public JSONObject getSignature(HttpServletRequest request) throws IOException {
         String url = request.getParameter("url");
         String nonceStr = wechatJsRepository.createNonceStr();

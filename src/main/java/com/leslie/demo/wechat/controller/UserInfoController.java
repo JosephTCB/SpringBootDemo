@@ -23,13 +23,13 @@ public class UserInfoController {
         this.userInfoRepository = userInfoRepository;
     }
 
-    @RequestMapping("getUserToken")
+    @RequestMapping("/getUserToken")
     public UserTokenResponse getUserToken(HttpServletRequest request) throws IOException {
         String code = request.getParameter("code");
         return userInfoRepository.getUserToken(code);
     }
 
-    @RequestMapping("getUserInfo")
+    @RequestMapping("/getUserInfo")
     public UserInfoResponse getUserInfo(HttpServletRequest request) throws IOException {
         String code = request.getParameter("code");
         return userInfoRepository.getUserInfo(code);
