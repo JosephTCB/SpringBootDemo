@@ -15,10 +15,10 @@ import java.io.IOException;
  */
 @Component
 public class WechatJsRepository {
-    private static String token = null;
-    private static long tokentimestamp = 0;
-    private static String ticket = null;
-    private static long tickettimestamp = 0;
+    private volatile static String token = null;
+    private volatile static long tokentimestamp = 0;
+    private volatile static String ticket = null;
+    private volatile static long tickettimestamp = 0;
     private final String grant_type = "client_credential";
     private final String appid = "******";//替换成微信公众号的appid
     private final String secret = "******";//替换成微信公众号的secret
